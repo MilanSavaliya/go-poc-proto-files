@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package types;
+
+option go_package = "types";
+
+import "types/address.proto";
+
+message Student {
+    int32 id = 1;
+    string first_name = 2;
+    string last_namem = 3;
+    repeated types.Address address_list = 4;
+}

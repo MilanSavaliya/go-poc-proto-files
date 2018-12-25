@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "controller";
+
+package controller;
+
+import "types/student.proto";
+import "types/address.proto";
+
+message RequestInput {
+    types.Student student = 1;
+}
+
+message ResponseMessage{
+    repeated types.Address address_list = 1;
+}
+
+service StudentController {
+    rpc GetAddressOfStudent(RequestInput) returns (ResponseMessage) {}
+}

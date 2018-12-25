@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package types;
+
+option go_package = "types";
+
+message Address {
+    int32 id = 1;
+
+    /*
+    * Street name of the location
+    */
+    string street = 2;
+
+    //Landmark
+    string landmark = 3;
+
+    //City name
+    string city = 4;
+
+    //State Name
+    string state = 5;
+
+    //Country name, must be short code. Like, IN, US, UK etc.
+    string country = 6;
+}
