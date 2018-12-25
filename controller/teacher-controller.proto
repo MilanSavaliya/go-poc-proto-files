@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "controller";
+
+package controller;
+
+import "types/teacher.proto";
+import "types/department.proto";
+
+message RequestInput {
+    types.Department department = 1;
+}
+
+message ResponseMessage{
+    repeated types.Teacher teacherList = 1;
+}
+
+service TeacherController {
+    rpc GetTeachers(RequestInput) returns (ResponseMessage) {}
+}
